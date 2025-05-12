@@ -384,7 +384,7 @@ dialog::backdrop {
 /* ------------------ Медиа-запрос------------------------*/
 
 @media (width <= 376px) {
-  .footer_floppy_button {
+  .content_floppy_button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -393,7 +393,7 @@ dialog::backdrop {
     inline-size: 306px;
     block-size: 84px;
   }
-  .footer_mobile_icon {
+  .content_floppy_icon {
     width: 28px;
     height: 28px;
   }
