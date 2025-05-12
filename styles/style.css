@@ -382,28 +382,20 @@ dialog::backdrop {
   transition: fill 0.3s linear 0.05s;
 }
 
-.like-icon.is-liked .core  {
+.like-icon.is-liked .core {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.05s;
 }
 
-/* ------------------ Шурешки сердца и их появление------------------------*/
+/* ------------------ Шурёшки сердца и их появление------------------------*/
 
 .like-icon.is-liked .sparks {
   opacity: 0;
   fill: var(--animation-fill-color);
-}
-
-.like-icon.is-liked .sparks {
   animation: sparks 0.5s ease-in 0.09s;
 }
 
 /* ------------------ Увеличение сердца при активации------------------------*/
-
-.like-icon.is-liked .heart {
-  animation: scale 0.3s ease-in;
-}
-
 
 .like-icon.is-liked .heart {
   animation: scale 0.3s ease-in;
