@@ -234,7 +234,7 @@
 }
 
 .footer_floppy_icon {
-  fill: var(--color-default);
+  color: var(--color-default);
   mix-blend-mode: difference;
 }
 
