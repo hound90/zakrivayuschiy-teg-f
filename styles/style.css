@@ -208,6 +208,7 @@
 .card_image_now {
   filter: contrast(60%) hue-rotate(80deg) sepia(40%) saturate(125%) blur(0.1rem);
 }
+
 /* ------------------ Дискета с кнопкой-----------------------*/
 
 .footer {
@@ -230,7 +231,6 @@
   cursor: pointer;
   inline-size: 335px;
   block-size: 55px;
-  
 }
 
 .footer_floppy_icon {
@@ -281,9 +281,8 @@ dialog::backdrop {
   mix-blend-mode: difference;
 }
 
-
-
 /* ------------------ Состояния кнопок------------------------*/
+
 .button {
   position: relative;
   overflow: hidden;
