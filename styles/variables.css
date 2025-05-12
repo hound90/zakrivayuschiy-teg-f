@@ -1,1 +1,39 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+   /* ------------------ Шрифт шапки(акцентный)------------------------*/
+  --font-alt-family: 'PressStart2P';
+   /* ------------------ Основной вариативный шрифт контента------------------------*/
+  --font-var-family: 'Inter-Variable';
+   /* ------------------ Вес заголовков и описания основного контента------------------------*/
+  --card-title-wght: 700;
+  --main-wght: 400;
+  /* ------------------ Цвет обводки текста------------------------*/
+  --stroke-color: #ababab;
+   /* ------------------ Градиент------------------------*/
+   --background-gradient: 
+   repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px), 
+   repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+   linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    /* ------------------ Размер шрифта заголовка------------------------*/
+    --font-size-title: clamp(3.0625rem, 2.710387323943662rem + 1.5023474178403755vw, 4.0625rem);
+    /* ------------------ Размер шрифта описания заголовка------------------------*/
+    --font-size-title-des: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+    --watermark-right:  25px;
+    --watermark-top:  25px;
+    --line-height: 1.6;
+  /* ------------------ Цвета кнопок и иконок------------------------*/
+    --color-default: #fff;
+    --contour-color: #000;
+    --animation-fill-color: #ff0000;
+}
+
+@media (width <= 376px) {
+  :root {
+  --watermark-right: 10px;
+  --watermark-top: 20px;
+  --line-height: 1.3;
+  }
+}
+
+
+

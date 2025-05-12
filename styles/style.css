@@ -7,10 +7,426 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
+
+@keyframes scale {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.25;
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-var-family), sans-serif;
+  font-variation-settings: "wght" var(--main-wght, 400);
+  inline-size: clamp(375px, 100vw, 700px);
+  background-image: var(--background-gradient);
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+/* ------------------ Шапка------------------------*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  min-block-size: clamp(327px, 313.2676px + 3.662vw, 366px);
+  background-color: #fff;
+  margin-block: 100px;
+}
+
+.header_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 100px;
+  gap: 20px;
+}
+
+.title_html {
+  font-family: var(--font-alt-family);
+  font-size: var(--font-size-title);
+  text-transform: uppercase;
+  color: #000;
+}
+
+.descriptions_html {
+  font-family: var(--font-alt-family);
+  font-size: var(--font-size-title-des);
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* ------------------ Основной контент------------------------*/
+
+.content {
+  display: grid;
+  gap: 50px;
+  padding-block-end: 50px;
+}
+
+.card_content {
+  display: grid;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.title_sections {
+  font-variation-settings: "wght" var(--card-title-wght);
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
+  padding-inline: 10px;
+  padding-block: 3px;
+  line-height: var(--line-height);
+}
+
+.card_img_watermark {
+  position: relative;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin: 0;
+}
+
+.card_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.watermark {
+  position: absolute;
+  top: var(--watermark-top);
+  right: var(--watermark-right);
+  font-family: var(--font-alt-family);
+  font-size: 14px;
+  color: #000;
+  mix-blend-mode: hard-light;
+  text-shadow: 1px 1px var(--stroke-color, #ababab);
+}
+
+@supports (-webkit-text-stroke: 2px var(--stroke-color, #ababab)) {
+  .watermark {
+    text-stroke: 2px var(--stroke-color, #ababab);
+    -webkit-text-stroke: 1px var(--stroke-color, #ababab);
+    text-shadow: none;
+  }
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+}
+
+.card_descriptions {
+  font-size: 18px;
+  line-height: 117%;
+  color: #000;
+}
+
+.card_buttons {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  padding-inline-end: 27px;
+  padding-block-end: 25px;
+  gap: 6px;
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  padding: 0;
+  inline-size: 38px;
+  block-size: 38px;
+}
+
+.card__like-button {
+  background-color: transparent;
+  border: 2px solid #000;
+  padding: 8px 9px 17px;
+  inline-size: 130px;
+  block-size: 38px;
+  cursor: pointer;
+}
+
+.button__text {
+  font-family: var(--font-alt-family);
+  font-size: 14px;
+  line-height: 90%;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+/* ------------------Фильтры картинок------------------------*/
+
+.card_image_pure {
+  filter: saturate(20%);
+}
+.card_image_if {
+  filter: saturate(300%);
+}
+.card_image_chase {
+  filter: hue-rotate(25deg);
+}
+.card_image_close {
+  filter: invert(80%);
+}
+.card_image_strategy {
+  filter: sepia(90%);
+}
+.card_image_when {
+  filter: blur(0.6rem);
+}
+.card_image_now {
+  filter: contrast(60%) hue-rotate(80deg) sepia(40%) saturate(125%) blur(0.1rem);
+}
+/* ------------------ Дискета с кнопкой-----------------------*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-block-end: 103px;
+}
+
+.button_save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+.footer_floppy_button {
+  background-color: transparent;
+  border: transparent;
+  inline-size: 335px;
+  block-size: 55px;
+  cursor: pointer;
+}
+
+.footer_mobile_icon {
+  fill: var(--color-default);
+  mix-blend-mode: difference;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+} 
+
+.dialog_save[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-block: 30px;
+  padding-inline: 30px;
+  inline-size: 353px;
+}
+
+.dialog_save_popap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 150%;
+}
+
+.dialog_description {
+  font-family: var(--font-alt-family);
+  font-size: 14px;
+  line-height: 150%;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.dialog_save_button {
+  background-color: transparent;
+  cursor: pointer;
+  block-size: 38px;
+}
+
+.button_dialog_text {
+  font-family: var(--font-alt-family);
+  font-size: 14px;
+  line-height: 90%;
+  color: #fff;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+
+
+
+/* ------------------ Состояния кнопок------------------------*/
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 3px 3px 0 #000;
+  transition: box-shadow 0.3s ease;
+}
+
+/* ------------------ Слайд анимация кнопкок------------------------*/
+
+.button:hover .button__text, .footer_mobile_icon, .button_dialog_text {
+  position: relative;
+  transition: color 0.5s ease-in-out;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0, 0, 0);
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
+}
+
+.button:hover:before {
+  transform: translate(0%);
+}
+
+/* ------------------ Анимация сердечка------------------------*/
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: #000;
+}
+
+/* ------------------ Быстрый возврат в исходное и точка происхождения анимации------------------------*/
+
+.like-icon .heart {
+  transition: fill 0.1s linear;
+  transform-origin: center center;
+}
+
+/* ------------------ Возврат цвета в исходный------------------------*/
+
+.like-icon .main-body {
+  fill: var(--color-default);
+  transition: fill 0.3s linear;
+}
+
+.like-icon .core {
+  fill: var(--color-default);
+  transition: fill 0.3s linear 0.03s;
+}
+
+/* ------------------ Наведение на сердечко------------------------*/
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+/* ------------------ Нажатие и удержание сердечка------------------------*/
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+/* ------------------ Активация сердечка------------------------*/
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core  {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/* ------------------ Шурешки сердца и их появление------------------------*/
+
+.like-icon.is-liked .sparks {
+  opacity: 0;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.5s ease-in 0.09s;
+}
+
+/* ------------------ Увеличение сердца при активации------------------------*/
+
+.like-icon.is-liked .heart {
+  animation: scale 0.3s ease-in;
+}
+
+
+.like-icon.is-liked .heart {
+  animation: scale 0.3s ease-in;
+}
+
+/* ------------------ Медиа-запрос------------------------*/
+
+@media (width <= 376px) {
+  .footer_floppy_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    inline-size: 306px;
+    block-size: 84px;
+  }
+  .footer_mobile_icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+
+
